@@ -1,0 +1,64 @@
+---
+import Experience from "./Experience.astro";
+import Education from "../components/Education.astro";
+---
+
+<section class="mt-32 max-w-4xl" id="about">
+  <span
+    class="text-blue-400 text-sm font-mono tracking-widest uppercase mb-2 block"
+  >
+    Mi Trayectoria
+  </span>
+
+  <h2
+    class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-100 to-gray-500 bg-clip-text text-transparent mb-8"
+  >
+    Sobre mí
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+    <div class="col-span-11">
+      <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+        Profesional apasionado por el <span class="text-blue-400 font-medium"
+          >aprendizaje continuo</span
+        > y la optimización de procesos. Actualmente, busco una oportunidad desafiante
+        donde pueda aplicar mis conocimientos técnicos y estratégicos.
+      </p>
+
+      <p class="mt-4 text-lg md:text-xl text-gray-400 leading-relaxed">
+        Mi enfoque está en contribuir al éxito de <span class="italic"
+          >organizaciones innovadoras</span
+        >, mientras escalo profesionalmente hacia roles de mayor impacto y
+        responsabilidad.
+      </p>
+
+      <div class="my-10 flex gap-4">
+        <div class="h-[1px] w-12 bg-gray-500 self-center"></div>
+        <a
+          href="#contacto"
+          class="text-sm font-semibold text-gray-200 hover:text-blue-400 transition-colors"
+        >
+          ← Hablemos de mi experiencia →
+        </a>
+      </div>
+    </div>
+  </div>
+  <Experience />
+  <section class="mt-32 max-w-4xl">
+    <h2
+      class="text-3xl font-bold text-gray-100 mb-12 flex items-center gap-x-4"
+    >
+      <svg
+        class="size-8 text-blue-500"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        ><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path
+          d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+        ></path></svg
+      >
+      Formación Académica
+    </h2>
+    <Education />
+  </section>
+</section>

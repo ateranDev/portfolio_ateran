@@ -1,0 +1,49 @@
+---
+const EDUCATION = [
+  {
+    title: "Técnico Superior Universitario",
+    institution:
+      "Instituto Universitario de Tecnología y Administración I.U.T.A",
+    date: "2018  2022",
+    description:
+      "Formación técnica enfocada en el ciclo de vida del desarrollo de software, gestión de bases de datos y arquitectura de sistemas. Capacitado para el análisis y resolución de problemas lógicos complejos mediante el uso de diversas tecnologías de la información.",
+  },
+  {
+    title: "Javascript Moderno",
+    institution: "Udemy - Juan Pabo De la Torre Valdez",
+    date: "2024",
+    description:
+      "Formación integral en JavaScript, desde fundamentos hasta conceptos avanzados. Capacidad para construir aplicaciones web interactivas consumiendo APIs externas y gestionando flujos de datos asíncronos (Async/Await, Promises). Sólidos conocimientos en arquitectura de software con POO y estándares ES6+.",
+  },
+];
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 py-2">
+  {
+    EDUCATION.map((item) => (
+      <div class="group relative p-6 rounded-2xl bg-gray-900/50 border border-gray-800 hover:border-blue-500/50 transition-all duration-300">
+        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
+        <div class="relative">
+          <header class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-xl font-bold text-gray-100 group-hover:text-blue-400 transition-colors">
+                {item.title}
+              </h3>
+              <p class="text-blue-400/80 font-medium text-sm mt-1">
+                {item.institution}
+              </p>
+            </div>
+            <span class="text-xs font-mono text-gray-500 bg-gray-800 px-2 py-1 rounded text-center">
+              {item.date}
+            </span>
+          </header>
+
+          <p class="text-gray-400 text-sm leading-relaxed">
+            {item.description}
+          </p>
+        </div>
+      </div>
+    ))
+  }
+</div>
