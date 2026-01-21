@@ -1,3 +1,24 @@
+---
+const PROJECTS = [
+  {
+    title: "Landing Page Corporativa",
+    description:
+      "Landing page moderna enfocada en conversión, performance y SEO.",
+    tags: ["Astro", "Tailwind", "SEO"],
+    link: "#", // URL del proyecto real
+    github: "#", // URL del repositorio
+  },
+  {
+    title: "Portfolio Personal",
+    description:
+      "Portfolio minimalista con animaciones suaves y alto performance.",
+    tags: ["Astro", "Tailwind", "UX"],
+    link: "#",
+    github: "#",
+  },
+];
+---
+
 <section id="projects" class="mt-32 max-w-4xl">
   <h2 class="text-3xl font-bold text-gray-100 mb-12 flex items-center gap-x-4">
     <svg
@@ -12,84 +33,50 @@
         stroke-linejoin="round"
         stroke-width="2"></path>
     </svg>
-
     Proyectos
   </h2>
 
-  <!-- Grid -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    <!-- Card -->
-    <article
-      class="group relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 transition-all duration-500 hover:-translate-y-2 hover:border-blue-500/40"
-    >
-      <h3
-        class="text-xl font-semibold text-gray-100 group-hover:text-blue-400 transition-colors"
-      >
-        Landing Page Corporativa
-      </h3>
+    {
+      PROJECTS.map(({ title, description, tags, link, github }) => (
+        <article class="group relative p-6 rounded-2xl bg-gray-900/50 border border-gray-800 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2">
+          <div class="relative z-10">
+            <h3 class="text-xl font-semibold text-gray-100 group-hover:text-blue-400 transition-colors">
+              {title}
+            </h3>
 
-      <p class="mt-3 text-gray-400 leading-relaxed">
-        Landing page moderna enfocada en conversión, performance y SEO.
-      </p>
+            <p class="mt-3 text-gray-400 leading-relaxed">{description}</p>
 
-      <p class="mt-4 text-sm font-mono text-gray-500">Astro · Tailwind · SEO</p>
+            <p class="mt-4 text-sm font-mono text-gray-500">
+              {tags.join(" · ")}
+            </p>
 
-      <!-- Links -->
-      <div class="mt-6 flex gap-6 text-sm">
-        <a
-          href="#"
-          target="_blank"
-          class="flex items-center gap-1 text-gray-300 hover:text-blue-400 transition-colors"
-        >
-          Demo →
-        </a>
-        <a
-          href="#"
-          target="_blank"
-          class="flex items-center gap-1 text-gray-300 hover:text-blue-400 transition-colors"
-        >
-          Código →
-        </a>
-      </div>
+            <div class="mt-6 flex gap-6 text-sm">
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-1 text-gray-300 hover:text-blue-400 transition-colors"
+              >
+                Demo →
+              </a>
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-1 text-gray-300 hover:text-blue-400 transition-colors"
+              >
+                Código →
+              </a>
+            </div>
+          </div>
 
-      <!-- Glow effect -->
-      <div
-        class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition pointer-events-none"
-        style="background: radial-gradient(600px at top left, rgba(59,130,246,0.15), transparent 40%)"
-      >
-      </div>
-    </article>
-
-    <!-- Card -->
-    <article
-      class="group relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 transition-all duration-500 hover:-translate-y-2 hover:border-blue-500/40"
-    >
-      <h3
-        class="text-xl font-semibold text-gray-100 group-hover:text-blue-400 transition-colors"
-      >
-        Portfolio Personal
-      </h3>
-
-      <p class="mt-3 text-gray-400 leading-relaxed">
-        Portfolio minimalista con animaciones suaves y alto performance.
-      </p>
-
-      <p class="mt-4 text-sm font-mono text-gray-500">Astro · Tailwind · UX</p>
-
-      <div class="mt-6 flex gap-6 text-sm">
-        <a href="#" class="text-gray-300 hover:text-blue-400 transition-colors">
-          Demo →
-        </a>
-        <a href="#" class="text-gray-300 hover:text-blue-400 transition-colors">
-          Código →
-        </a>
-      </div>
-
-      <div
-        class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition pointer-events-none"
-        style="background: radial-gradient(600px at top left, rgba(59,130,246,0.15), transparent 40%)"
-      >
-      </div>
-    </article>
+          <div
+            class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition pointer-events-none"
+            style="background: radial-gradient(600px at top left, rgba(59,130,246,0.15), transparent 40%)"
+          />
+        </article>
+      ))
+    }
   </div>
 </section>

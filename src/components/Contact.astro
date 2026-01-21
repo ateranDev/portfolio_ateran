@@ -1,0 +1,121 @@
+---
+// Puedes cambiar esta URL por la que te dé Formspree.io o tu servicio favorito
+const FORM_ACTION_URL = "https://formspree.io/f/tu_id_aqui";
+---
+
+<section id="contact" class="mt-32 max-w-4xl pb-20">
+  <h2 class="text-3xl font-bold text-gray-100 mb-12 flex items-center gap-x-4">
+    <svg
+      class="size-8 text-blue-500"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+      ></path>
+    </svg>
+    Contacto
+  </h2>
+
+  <div class="relative group">
+    <div
+      class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"
+    >
+    </div>
+
+    <div
+      class="relative bg-gray-900 border border-gray-800 rounded-2xl p-8 md:p-12"
+    >
+      <form
+        action={FORM_ACTION_URL}
+        method="POST"
+        class="grid grid-cols-1 gap-y-6"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <label for="name" class="text-sm font-medium text-gray-300 ml-1"
+              >Tu nombre</label
+            >
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder="Juan Perez"
+              class="w-full bg-gray-800/50 border border-gray-700 rounded-xl px-4 py-3 text-gray-100 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+            />
+          </div>
+
+          <div class="space-y-2">
+            <label for="email" class="text-sm font-medium text-gray-300 ml-1"
+              >Correo electrónico</label
+            >
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              placeholder="tu@email.com"
+              class="w-full bg-gray-800/50 border border-gray-700 rounded-xl px-4 py-3 text-gray-100 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+            />
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <label for="subject" class="text-sm font-medium text-gray-300 ml-1"
+            >Asunto</label
+          >
+          <input
+            type="text"
+            name="subject"
+            id="subject"
+            required
+            placeholder="¿En qué puedo ayudarte?"
+            class="w-full bg-gray-800/50 border border-gray-700 rounded-xl px-4 py-3 text-gray-100 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+          />
+        </div>
+
+        <div class="space-y-2">
+          <label for="message" class="text-sm font-medium text-gray-300 ml-1"
+            >Mensaje</label
+          >
+          <textarea
+            name="message"
+            id="message"
+            rows="5"
+            required
+            placeholder="Hola, me gustaría hablar sobre..."
+            class="w-full bg-gray-800/50 border border-gray-700 rounded-xl px-4 py-3 text-gray-100 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="relative flex items-center justify-center gap-2 w-full md:w-max px-8 py-4 bg-blue-600 hover:bg-blue-500 cursor-pointer text-white font-bold rounded-xl transition-all duration-300 group/btn overflow-hidden"
+        >
+          <span class="relative z-10">Enviar mensaje</span>
+          <svg
+            class="size-5 relative z-10 group-hover/btn:translate-x-1 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"
+          >
+          </div>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
